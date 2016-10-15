@@ -22,9 +22,14 @@ git diff Dockerfile
 git commit -m "update sparktk build" Dockerfile 
 
 
+
 if [ "$BRANCH" != "" ]; then
-echo git tag -a $BRANCH -m "BRANCH build"
-git tag -a $BRANCH  -m "$BRANCH build"
+
+echo git checkout -b $BRANCH
+git checkout -b $BRANCH 
+
+#echo git tag -a $BRANCH -m "BRANCH build"
+#git tag -a $BRANCH  -m "$BRANCH build"
 
 echo git push origin $BRANCH
 git push origin $BRANCH
